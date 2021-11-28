@@ -21,8 +21,8 @@ public class UserController {
 	@GetMapping("/signup")
 	public String getSignup(Model model) {
 		
-		Map<String,Integer> gender = service.getGenderMap();
-		model.addAttribute("gender", gender);
+		Map<String,Integer> genderMap = service.getGenderMap();
+		model.addAttribute("genderMap", genderMap);
 		return "/user/signup";
 		
 	}
