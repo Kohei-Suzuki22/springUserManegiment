@@ -9,24 +9,24 @@
 <link rel="stylesheet" th:href="@{/css/login/login.css}">
 <script th:src="@{webjars/jquery/jquery.min.js}" defer></script>
 <script th:src="@{webjars/bootstrap/js/bootstrap.min.js}" defer></script>
-<title>ログイン</title>
+<title th:text=#{user.login.title}></title>
 </head>
 <body class="bg-light">
 	<div class="text-center">
 		<form method="post" th:action="@{/login}" class="form-login">
-			<h2>ログイン</h2>
+			<h2 th:text=#{user.login.title}></h2>
 			<div class="form-group mb-2">
-				<label for="userId" class="sr-only">userId</label> <input type="text"
-					class="form-control" placeholder="ユーザーID" name="userId">
+				<input type="text" class="form-control" th:placeholder=#{userId}
+					name="userId">
 			</div>
 			<div class="form-group mb-2">
-				<label for="password" class="sr-only">password</label> <input
-					type="password" class="form-control" placeholder="パスワード"
+				<input type="password" class="form-control" th:placeholder=#{password}
 					name="password">
 			</div>
-			<input type="submit" value="ログイン" class="btn btn-primary">
+			<input type="submit" th:value=#{user.login.btn}
+				class="btn btn-primary">
 		</form>
-		<a th:href="@{/user/signup}">新規登録はこちら</a>
+		<a th:href="@{/user/signup}" th:text=#{user.signup.link}></a>
 	</div>
 </body>
 </html>
