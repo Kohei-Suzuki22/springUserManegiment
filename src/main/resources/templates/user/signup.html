@@ -16,29 +16,29 @@
 		class="form-signup">
 		<h1 class="text-center">ユーザー登録</h1>
 		<div class="form-group">
-			<label for="userId">ユーザーID</label>
-			<input type="text" class="form-control">
+			<label for="userId">ユーザーID</label> <input type="text"
+				class="form-control">
 		</div>
 		<div class="form-group">
-			<label for="password">パスワード</label> 
-			<input type="text" class="form-control">
+			<label for="password">パスワード</label> <input type="password"
+				class="form-control">
 		</div>
 		<div class="form-group">
-			<label for="userName">ユーザー名</label>
-			<input type="text" class="form-control">
+			<label for="userName">ユーザー名</label> <input type="text"
+				class="form-control">
 		</div>
 		<div class="form-group">
-			<label for="birthday">誕生日</label>
-			<input type="text" class="form-control" placeholder="yyyy/MM/dd">
+			<label for="birthday">誕生日</label> <input type="text"
+				class="form-control" placeholder="yyyy/MM/dd">
 		</div>
 		<div class="form-group">
-			<label for="age">年齢</label>
-			<input type="text" class="form-control">
+			<label for="age">年齢</label> <input type="text" class="form-control">
 		</div>
 		<div class="form-group">
 			<div th:each="item: ${genderMap}" class="form-check-inline">
-				<input type="radio" class="form-check-input" th:value="${item.value}">
-				<label class="form-check-label" th:text="${item.key}"></label>
+				<input type="radio" class="form-check-input" name="gender"
+					th:value="${item.value}"> <label class="form-check-label"
+					th:text="${item.key}"></label>
 			</div>
 		</div>
 		<input type="submit" value="ユーザー登録" class="btn btn-primary w-100 mt-3">
