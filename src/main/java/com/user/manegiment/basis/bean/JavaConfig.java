@@ -12,7 +12,9 @@ public class JavaConfig {
 	public MessageSource messageSource() {
 		ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
 		
-		messageSource.setBasename("messages");
+		// ↓ここで "i18n/messages_en" のようにすると、ブラウザの言語を変更しても enのままになってしまうので注意
+		// "i18n/messages" を指定すると、ブラウザの言語設定が反映される
+		messageSource.setBasename("i18n/messages");
 		messageSource.setDefaultEncoding("UTF-8");
 		
 		return messageSource;
