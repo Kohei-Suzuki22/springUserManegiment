@@ -11,34 +11,34 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.Range;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.user.manegiment.basis.form.validation.ValidGroup1;
+import com.user.manegiment.basis.form.validation.ValidGroup2;
+
 import lombok.Data;
 
 @Data
 public class SignupForm {
-	
-	@NotBlank
-	@Email
+
+	@NotBlank(groups = ValidGroup1.class)
+	@Email(groups = ValidGroup2.class)
 	private String userId;
 
-	@NotBlank
-	@Length(min=4, max=50)
-	@Pattern(regexp = "^[a-zA-Z0-9]+$")
+	@NotBlank(groups = ValidGroup1.class)
+	@Length(min = 4, max = 50, groups = ValidGroup2.class)
+	@Pattern(regexp = "^[a-zA-Z0-9]+$", groups = ValidGroup2.class)
 	private String password;
-	
-	@NotBlank
+
+	@NotBlank(groups = ValidGroup1.class)
 	private String userName;
-	
+
 	@DateTimeFormat(pattern = "yyyy/MM/dd")
-	@NotNull
+	@NotNull(groups = ValidGroup1.class)
 	private Date birthday;
 
-	@Range(min=0, max=100)
+	@Range(min = 0, max = 100, groups=ValidGroup2.class)
 	private Integer age;
-	
-	@NotNull
+
+	@NotNull(groups = ValidGroup1.class)
 	private Integer gender;
-	
-	
-	
 
 }
